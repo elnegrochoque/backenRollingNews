@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import './database';
+import noticiasRoutes from './routes/noticias.routes'
 
 const app = express();
 
@@ -29,8 +30,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,'../public')));
 
 
+// app.get('/',(req,res)=>{
+//     res.send('hola  desde el servidor');
+// })
 
-app.get('/',(req,res)=>{
-    res.send('hola  desde el servidor');
-})
-
+app.use('/api/noticias',noticiasRoutes);
