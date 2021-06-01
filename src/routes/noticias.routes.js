@@ -8,7 +8,7 @@ const router = Router();
 //router.route("/").get(funcion con logica)
 router
     .route("/")
-    .get(noticiasCtrl.getPrueba)
+    .get(noticiasCtrl.listarNoticias)
     .post(noticiasCtrl.crearNoticia);
 
 export default router;
