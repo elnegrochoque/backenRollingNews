@@ -58,6 +58,21 @@ noticiasCtrl.listarNoticias = async (req, res) => {
     }
 
 }
+noticiasCtrl.eliminarNoticia = async (req, res) => {
+    try {
+      
+        console.log(req.params.id)
+        await Noticia.findByIdAndDelete(req.params.id)
+        res.status(200).json({
+            mensaje:"el producto fue eliminado"
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            mensaje: "error eliminar la noticia"
+        })
+    }
 
+}
 
 export default noticiasCtrl;
