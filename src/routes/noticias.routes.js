@@ -8,10 +8,11 @@ const router = Router();
 //router.route("/").get(funcion con logica)
 router.route("/")
     .get(noticiasCtrl.listarNoticias)
-    .post(noticiasCtrl.crearNoticia)
+    .post(noticiasCtrl.crearNoticia);
 router.route("/:id")
     .delete(noticiasCtrl.eliminarNoticia)
-
+    .get(noticiasCtrl.obtenerNoticia)
+    .put(noticiasCtrl.editarNoticia);
 
 
 
